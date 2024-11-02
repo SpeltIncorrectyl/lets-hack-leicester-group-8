@@ -25,3 +25,9 @@
 
 QR Codes - allow people to create their own and add.
 - Merge close together QR codes for reports - or give same QR code to nearby ones.
+
+
+# Potential Features (Improvements that can be made going forward)
+
+- Link it with google maps, maybe try to integrate it with street view
+-  
