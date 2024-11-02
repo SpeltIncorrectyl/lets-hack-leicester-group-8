@@ -18,6 +18,7 @@ Building on the community through gamification to encourage people to look after
 * Allow people to request to create a QR code for an area.
 
 * Incentives to make people actually scan and give constructive feedback, or just make poster pretty.
+* Annoymous and seamless is best, quick to do.
 
 ## QR Code Idea
 
@@ -25,16 +26,19 @@ People can create pages on the website. Each page has a QR code which links dire
 
 *Must have seamless experience, no need for account, someone can just instantly interact with the product*
 
-*Creative Qr code with slogans that people can recognise with red fonts  
+* Creative Qr code with slogans that people can recognise with red fonts  
+
+* Upvote/downvote something.
 
 ### Potential Issues
 
 * Spam - easy to post large amounts of content
 * Sockpuppets - someone can imitate multiple people to make themselves seem more important
 
+* Potential solution: filtering and summary reports so we don't have to see spam.
+* Input validation on form.
 
-
-# Tech Stack
+# Tech Stack:
 
 **Backend:** Python+Flask
 
@@ -42,3 +46,8 @@ People can create pages on the website. Each page has a QR code which links dire
 
 **Database:** MySQL
 **Port Forwarding** ngrok
+
+# Plan:
+
+
+
