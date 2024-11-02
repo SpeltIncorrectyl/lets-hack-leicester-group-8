@@ -17,6 +17,6 @@ Building on the community through gamification to encourage people to look after
 
 **Backend:** Python+Flask
 
-**Frontend**: Javascript+Svelte
+**Frontend**: Plain Javascript
 
 **Database:** *None*
