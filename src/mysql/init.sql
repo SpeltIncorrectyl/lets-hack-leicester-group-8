@@ -1,1 +1,0 @@
-CREATE DATABASE IF NOT EXISTS lets_hack_leicester_group_8_qr_code_db

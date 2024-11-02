@@ -26,13 +26,12 @@ People can create pages on the website. Each page has a QR code which links dire
 * Spam - easy to post large amounts of content
 * Sockpuppets - someone can imitate multiple people to make themselves seem more important
 
-
-
 # Tech Stack
 
 **Backend:** Python+Flask
 
 **Frontend**: Plain Javascript
 
-**Database:** MySQL
-**Port Forwarding** ngrok
+**Database:** Flask SQLAlchemy
+
+**Other Technology**: Chart.js (graphs), ngrok (port forwarding), qrcode.js (generating qrcodes)
