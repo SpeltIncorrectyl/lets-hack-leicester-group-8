@@ -33,6 +33,20 @@ We plan to combat this by using cookies on the frontend to track what posts some
 
 Comments are rate limited to reduce the impact of spam. There are two rate limits, one enforced via a token stored in a cookie on the frontend that can be subverted but prevents trival spam. A second rate limit on the server (unsubvertable) for all comments posted on a page.
 
-The worse possible outc
+Comments will be automatically removed after a set amount of time so spam attacks and malicious content will be removed eventually.
 
-have place qr code should lead to, users can see if it leads there after scanning but before following through
+The worse outcome is that someone triggers an email to be sent, which someone could achieve already by just sending that email themselves.
+
+### Offensive Content
+
+Someone could use the comments to post offensive content. There is a simple text filter to catch basic offensive language. Offensive comments can reported, after a sufficient amount of reporting a comment will be removed.
+
+The page owner can choose to enable or disable automatic removal of reported comments, they can choose to remove offensive comments themselves.
+
+The page owner can also trigger a panic bunker, which for its duration prevents new comments being placed.
+
+### Malicious QR Codes
+
+A QR code obfuscated the url it leads to. A bad actor could make posters immitating the ones used by our service, and have them link to malicious sites.
+
+Our solution to this is to have the posters mention the URL the QR code should link to. A user will be able to see if that link goes to a website in our domain. Modern smartphones allow the user to see what url they are opening when they scan a QR code, the user can then check if the url on the poster matches the one the QR code encodes.
