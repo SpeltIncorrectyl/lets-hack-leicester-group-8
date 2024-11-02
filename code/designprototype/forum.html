@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Local Voice Leicester Forum</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <h1> Local Voice Leicester </h1>
+            <h2> Raise Concerns Raise Standards </h2>
+        </header>
+        <div id="shape-container"> <div id="small-triangle"></div> </div>
+
+        <main>
+            <article>
+                This is our voice at the moment. Support others and speak louder.
+            </article>
+
+            <article>
+                <label> Selected Region: </label>
+                <input placeholder="Current Location" />
+            </article>
+
+            <ul id="voices">
+                <li>
+                    <div class="voter">
+                        <button class="btn"> <img src="images/upvote-icon.png"/> </button>
+                        <p> +1 </p>
+                        <button class="btn"> <img src="images/downvote-icon.png"/> </button>
+                    </div>
+                    <div class="info">
+                        <p> Issue </p>
+                        <p> <img src="" alt="Attachment"/> <p>
+                        <p> Description </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="voter">
+                        <button class="btn"> <img src="images/upvote-icon.png"/> </button>
+                        <p> +1 </p>
+                        <button class="btn"> <img src="images/downvote-icon.png"/> </button>
+                    </div>
+                    <div class="info">
+                        <p> Issue </p>
+                        <p> <img src="" alt="Attachment"/> <p>
+                        <p> Description </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="voter">
+                        <button class="btn"> <img src="images/upvote-icon.png"/> </button>
+                        <p> +1 </p>
+                        <button class="btn"> <img src="images/downvote-icon.png"/> </button>
+                    </div>
+                    <div class="info">
+                        <p> Issue </p>
+                        <p> <img src="" alt="Attachment"/> <p>
+                        <p> Description </p>
+                    </div>
+                </li>
+            </ul>
+
+        </main>
+
+        <footer>
+            <p> &copy; Local Voice Leicester: Raise Concerns, Raise Standards. </p>
+        </footer>
+    </body>
+
+    <script>
+
+        var btns = document.getElementsByClassName("btn");
+        console.log(btns);
+
+        for (let i = 0; i < btns.length; i++){
+            btns[i].addEventListener("click", function() {
+                this.style.box_shadow = "10px 10px";
+                console.log(this);
+            });
+        }
+
+    </script>
+</html>

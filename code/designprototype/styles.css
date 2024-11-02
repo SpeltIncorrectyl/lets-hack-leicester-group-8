@@ -45,11 +45,17 @@ h1, h2 {
     padding: 5px;
 }
 
-section {
-    margin: 10px 0px 30px;
+article {
+    text-align: center;
+    padding: 0px 10% 30px;
+    position: relative;
 }
 
-button {
+section {
+    margin: 10px 10px 30px;
+}
+
+.menu-btn {
     width: 75%;
     height: 15vh;
     background-color: var(--darker-red);
@@ -59,12 +65,6 @@ button {
     font-size: larger;
     padding: 8px;
     box-shadow: 1px 2px 3px rgba(50,1,1, 0.1)
-}
-
-article {
-    text-align: center;
-    padding: 0 10% 30px;
-    position: relative;
 }
 
 footer {
@@ -80,11 +80,39 @@ footer p {
     padding-bottom: 5px;
 }
 
-.menu-btn {
+.menu-btn-section {
     text-align: center;
 }
 
-.formsheet{
-    margin: 20px 10px;
+#voices {
+    list-style-type: none;
+    padding: 10px;
+}
+#voices li {
+    background-color: var(--light-grey);
+    display: flex;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+}
+.voter {
+    list-style-type: none;
+    padding: 0px;
+    width: 32px;
+}
+.voter button {
+    padding: 2px;
+    background-color: transparent;
+    border: transparent;
+}
+.voter img {
+    width: 20px;
+}
+.voter p {
+    padding: 2px;
+    font-weight: bold;
 }
 
+.formsheet {
+    margin: 20px 10px;
+}
