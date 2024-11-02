@@ -35,3 +35,4 @@ People can create pages on the website. Each page has a QR code which links dire
 **Frontend**: Plain Javascript
 
 **Database:** MySQL
+**Port Forwarding** ngrok
