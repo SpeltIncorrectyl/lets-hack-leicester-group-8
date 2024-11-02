@@ -7,4 +7,11 @@
 
 # Our ideas:
 
+# Tech Stack
+
+**Backend:** Python+Flask
+
+**Frontend**: Javascript+Svelte
+
+**Database:** *None*
 
