@@ -12,8 +12,7 @@ def new_page():
 
 @app.route("/new_page/creation", methods=["POST"])
 def create_new_page():
-    if request.method == "POST":
-        print(request.form["name"])
+    print(request.json["name"])
     return "Success!"
 
 app.run(port=8080, debug=True)
