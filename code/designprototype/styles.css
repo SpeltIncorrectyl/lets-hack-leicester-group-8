@@ -18,39 +18,52 @@ header {
     background-color: var(--navy-blue);
 }
 
-main {
-    text-align: center;
+body {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: auto;
 }
 
 h1, h2 {
     color: white;
+    padding: 5px;
 }
 
 section {
-    margin: 20px 10px;
+    margin: 10px 0px 30px;
 }
 
 button {
     width: 75%;
-    height: 25vh;
-    min-height: 100px;
+    height: 20vh;
     background-color: var(--tomato-red);
     border-color: transparent;
     border-radius: 30px;
     color: white;
-    font-size: large;
+    font-size: larger;
+    padding: 5px;
+}
+
+article {
+    text-align: center;
+    padding: 5%;
 }
 
 footer {
-    background-color: var(--navy-blue);
+    background-color: var(--light-grey);
     padding: 40px;
     text-align: center;
-    color: var(--light-grey);
+    color: black;
     position: relative;
     bottom: 0;
-    height: 100px;
+}
+
+.menu-btn {
+    text-align: center;
 }
 
 .formsheet{
     margin: 20px 10px;
 }
+
