@@ -13,6 +13,8 @@ Building on the community through gamification to encourage people to look after
 
 * App to give points for keeping clean
 
+* QR Code to give feedback to certain areas, allows government to know which areas need attention
+
 # Tech Stack
 
 **Backend:** Python+Flask
