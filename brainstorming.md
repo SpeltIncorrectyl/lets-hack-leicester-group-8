@@ -15,11 +15,17 @@ Building on the community through gamification to encourage people to look after
 
 * QR Code to give feedback to certain areas, allows government to know which areas need attention. Sent to local city council as a report. Data analysis
 
+* Allow people to request to create a QR code for an area.
+
+* Incentives to make people actually scan and give constructive feedback, or just make poster pretty.
+
 ## QR Code Idea
 
 People can create pages on the website. Each page has a QR code which links directly to that webpage. Someone just scan the QR code and it takes them directly to the page. They can comment and like and discuss things and provide feedback.
 
 *Must have seamless experience, no need for account, someone can just instantly interact with the product*
+
+*Creative Qr code with slogans that people can recognise with red fonts  
 
 ### Potential Issues
 
