@@ -1,0 +1,38 @@
+# Local Voice
+
+# Problem
+
+Difficulty gathering neccessary feedback to improve city. **Examples**:
+
+* Bus stop is damaged, someone notices, they are unsure of how to report this feedback
+* Potholes in road, someone notices, they are unsure of how to report it
+
+## Our Solution
+
+A website (works on mobile) where people can create pages for places like bustops or shops or roads, and then create a qr-code that links to that page. People can scan the qr-code to access the page and can leave comments. Comments can be liked and reported. Likes are collated and are a rough measure of how important feedback is to people. Comments can be reported; sufficient reports will automatically remove the comment.
+
+If a comment is liked enough it will send an email to a pre-configured email address.
+
+## Other Solutions and How we Compare
+
+### Email
+
+Someone could find the email of the authority responsible for maintenance. This solution is flawed as it involves a lot of effort on the part of the person reporting, as opposed to our solution which is very convient as all the user has to do is just scan the qr-code.
+
+### Google Maps
+
+Google Maps requires someone to create or log into a google. It also requires someone to find the place on google maps. Thousands of people visit places on google maps in real life every day, but the number of reviews left is far lower. This is evidence of the friction mentioned above stopping people from using it. Our solution has far less friction.
+
+## Potential Issues and How we Plan to Deal with them
+
+### Sockpuppets
+
+A malicious user could pretend to be multiple users and mass like comments for to give them unfair influence. They could also spread spam.
+
+We plan to combat this by using cookies on the frontend to track what posts someone have liked. This can be subverted but it means its not trivial for an attacker to mass like comments.
+
+Comments are rate limited to reduce the impact of spam. There are two rate limits, one enforced via a token stored in a cookie on the frontend that can be subverted but prevents trival spam. A second rate limit on the server (unsubvertable) for all comments posted on a page.
+
+The worse possible outc
+
+have place qr code should lead to, users can see if it leads there after scanning but before following through
