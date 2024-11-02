@@ -30,4 +30,4 @@ QR Codes - allow people to create their own and add.
 # Potential Features (Improvements that can be made going forward)
 
 - Link it with google maps, maybe try to integrate it with street view
--  
+- Plan for security measures and plan against people who might make fake QR codes.
