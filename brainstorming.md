@@ -25,6 +25,8 @@ People can create pages on the website. Each page has a QR code which links dire
 
 *Must have seamless experience, no need for account, someone can just instantly interact with the product*
 
+*Creative Qr code with slogans that people can recognise with red fonts  
+
 ### Potential Issues
 
 * Spam - easy to post large amounts of content
