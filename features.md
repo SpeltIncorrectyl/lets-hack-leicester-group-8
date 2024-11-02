@@ -20,3 +20,8 @@
 
 
 - Upvotes and downvotes
+
+
+
+QR Codes - allow people to create their own and add.
+- Merge close together QR codes for reports - or give same QR code to nearby ones.
