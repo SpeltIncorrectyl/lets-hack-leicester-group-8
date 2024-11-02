@@ -51,3 +51,5 @@ People can create pages on the website. Each page has a QR code which links dire
 # Future potential:
 
 - Integration with google lens, take picture, auto identify where is etc.
+- More security to help
+
