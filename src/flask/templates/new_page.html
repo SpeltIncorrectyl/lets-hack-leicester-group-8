@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Voice - Page Creation</title>
+</head>
+<body>
+    <h1>Local Voice - Page Creation</h1>
+    <a href="/">Back to homepage</a>
+    <input type="text" id="page_creation_name_field" />
+    <button onclick="onSubmitPageCreation()">Create!</button>
+
+    <script>
+        async function onSubmitPageCreation() {
+            await fetch("/new_page/creation", {
+                method: "POST",
+                body: JSON.stringify({
+                    name: document.getElementById("page_creation_name_field").value
+                }),
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            });
+        }
+    </script>
+</body>
+</html>
