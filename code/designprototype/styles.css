@@ -1,15 +1,19 @@
 
+
 :root {
     --navy-blue: #363D57;
     --tomato-red: #F55A51;
     --darker-red: #D64C44;
 }
 
-header  {
+* {
+    margin: 0;
+}
+
+header {
     padding: 40px;
     text-align: center;
     background-color: var(--navy-blue);
-    
 }
 
 h1, h2 {
@@ -24,9 +28,12 @@ section {
 button {
     width: 100%;
     height: 30vh;
+    min-height: 100px;
     background-color: var(--tomato-red);
     border-color: transparent;
     border-radius: 30px;
+
+    color: white;
 }
 
 footer {
