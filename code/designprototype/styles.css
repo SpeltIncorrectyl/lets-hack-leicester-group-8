@@ -18,11 +18,26 @@ header {
     background-color: var(--navy-blue);
 }
 
+#shape-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+#small-triangle {
+    width: 0;
+	height: 0;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-top: 20px solid var(--navy-blue);
+    margin-bottom: 25px;
+}
+
 body {
     display: grid;
+    flex-direction: column;
     height: 100vh;
     grid-template-rows: auto 1fr auto;
-    grid-template-columns: auto;
 }
 
 h1, h2 {
@@ -36,18 +51,20 @@ section {
 
 button {
     width: 75%;
-    height: 20vh;
-    background-color: var(--tomato-red);
+    height: 15vh;
+    background-color: var(--darker-red);
     border-color: transparent;
-    border-radius: 30px;
+    border-radius: 18px;
     color: white;
     font-size: larger;
-    padding: 5px;
+    padding: 8px;
+    box-shadow: 1px 2px 3px rgba(50,1,1, 0.1)
 }
 
 article {
     text-align: center;
-    padding: 5%;
+    padding: 0 10% 30px;
+    position: relative;
 }
 
 footer {
@@ -57,6 +74,10 @@ footer {
     color: black;
     position: relative;
     bottom: 0;
+}
+
+footer p {
+    padding-bottom: 5px;
 }
 
 .menu-btn {
