@@ -13,7 +13,7 @@ Building on the community through gamification to encourage people to look after
 
 * App to give points for keeping clean
 
-* QR Code to give feedback to certain areas, allows government to know which areas need attention
+* QR Code to give feedback to certain areas, allows government to know which areas need attention. Sent to local city council as a report. Data analysis
 
 ## QR Code Idea
 
@@ -25,6 +25,8 @@ People can create pages on the website. Each page has a QR code which links dire
 
 * Spam - easy to post large amounts of content
 * Sockpuppets - someone can imitate multiple people to make themselves seem more important
+
+
 
 # Tech Stack
 
