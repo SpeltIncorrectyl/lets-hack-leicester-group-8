@@ -100,6 +100,7 @@ footer a {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 12px;
+    box-shadow: 1px 2px 3px rgba(50,1,1, 0.1)
 }
 .voter {
     list-style-type: none;
@@ -119,14 +120,17 @@ footer a {
     font-weight: bold;
 }
 
-.formsheet {
-    margin: 20px 10px;
-    text-align: center;
+.prompt {
     background-color: var(--light-grey);
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    width: min-content;
+    padding: 20px;
+    margin: 0 20% ;
+    border-radius: 15px;
+}
+
+.formsheet {
+    margin: 20px;
+    text-align: center;
+    /* background-color: var(--light-grey); */
     padding: 10px;
     border-radius: 15px;
 }
@@ -136,4 +140,13 @@ footer a {
 
 .formsection {
     padding: 5px;
+}
+
+#submit {
+    background-color: var(--tomato-red);
+    padding: 12px;
+    border: transparent;
+    border-radius: 12px;
+    color: white;
+    box-shadow: 1px 2px 3px rgba(50,1,1, 0.1)
 }
