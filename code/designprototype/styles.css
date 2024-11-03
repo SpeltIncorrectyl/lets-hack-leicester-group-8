@@ -4,10 +4,13 @@
     --navy-blue: #363D57;
     --tomato-red: #F55A51;
     --darker-red: #D64C44;
+    --light-grey: #f4f4f4;
+    --blue: #5C6EAD;
 }
 
 * {
     margin: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 header {
@@ -16,36 +19,106 @@ header {
     background-color: var(--navy-blue);
 }
 
+#shape-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+#small-triangle {
+    width: 0;
+	height: 0;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-top: 20px solid var(--navy-blue);
+    margin-bottom: 25px;
+}
+
+body {
+    display: grid;
+    flex-direction: column;
+    height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    color: var(--navy-blue);
+}
+
 h1, h2 {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
+    padding: 5px;
+}
+
+article {
+    text-align: center;
+    padding: 0px 10% 30px;
+    position: relative;
 }
 
 section {
-    margin: 20px 10px;
+    margin: 10px 10px 25px;
 }
 
-button {
-    width: 100%;
-    height: 30vh;
-    min-height: 100px;
-    background-color: var(--tomato-red);
+.menu-btn {
+    width: 75%;
+    height: 15vh;
+    background-color: var(--darker-red);
     border-color: transparent;
-    border-radius: 30px;
-
+    border-radius: 18px;
     color: white;
+    font-size: larger;
+    padding: 8px;
+    box-shadow: 1px 2px 3px rgba(50,1,1, 0.1)
 }
 
 footer {
-    background-color: var(--navy-blue);
+    background-color: var(--light-grey);
     padding: 40px;
     text-align: center;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: white;
+    color: black;
+    position: relative;
+    bottom: 0;
 }
+
+footer p {
+    padding-bottom: 5px;
+}
+footer a {
+    text-decoration: none;
+    color: var(--blue);
+}
+
+.menu-btn-section {
+    text-align: center;
+}
+
+#voices {
+    list-style-type: none;
+    padding: 10px 20px;
+}
+#voices li {
+    background-color: var(--light-grey);
+    display: flex;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+}
+.voter {
+    list-style-type: none;
+    padding: 0px;
+    width: 32px;
+}
+.voter button {
+    padding: 2px;
+    background-color: transparent;
+    border: transparent;
+}
+.voter img {
+    width: 20px;
+}
+.voter p {
+    padding: 2px;
+    font-weight: bold;
+}
+
 .formsheet {
     margin: 20px 10px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    
-    
 }
