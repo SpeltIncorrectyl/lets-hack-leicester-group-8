@@ -35,9 +35,17 @@
         <p>No comments...</p>
     {% else %}
         {% for comment in comments %}
-            <b>Posted on {{comment.date}} at {{comment.time}}</b>
-            <br>
-            <span>{{comment.content}}</span>
+            <div comment_id="{{comment.id}}">
+                <b>Posted on {{comment.date}} at {{comment.time}}</b>
+                <br>
+                {% if comment.reports < 5 %}
+                    <span>{{comment.content}}</span>
+                    <br>
+                    <span onclick="interactComment('{{comment.id}}', 'like')">Likes: {{comment.likes}}</span> <span onclick="interactComment('{{comment.id}}', 'report')">Reports: {{comment.reports}}</span>
+                {% else %}
+                    <i>This comment has been temporarily removed pending manual review.</i>
+                {% endif %}
+            </div>
             <br>
             <br>
         {% endfor %}
@@ -108,6 +116,19 @@
             }
 
             clearError();
+        }
+
+        async function interactComment(id, interaction) {
+            let response = await fetch("/api/interact_comment", {
+                method: "POST",
+                body: JSON.stringify({
+                    id: id,
+                    interaction: interaction
+                }),
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            });
         }
     </script>
 </body>

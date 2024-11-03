@@ -63,20 +63,32 @@ def site_all_page_viewing():
     page_names = [(page.name.title(), page.name.replace(" ", "-").lower()) for page in pages]
     return render_template("all_pages.html", page_names=page_names)
 
+@app.route("/api/interact_comment", methods=["POST"])
+def interact_comment():
+    #id, interaction
+    if "id" in request.json and "interaction" in request.json:
+        comment = Comment.query.filter(Comment.id == int(request.json["id"])).one()
+        if request.json["interaction"] == "like":
+            comment.likes += 1
+        elif request.json["interaction"] == "report":
+            comment.reports += 1
+        db.session.commit()
+        socketio.emit("comments_changed", {"page": comment.page})
+
 @app.route("/api/post_comment", methods=["POST"])
 def api_post_comment():
     #page, content
-    # try:
-    if "page" in request.json and "content" in request.json and len(request.json["content"]) > 0:
-        _page = Page.query.filter(Page.name == request.json["page"]).one()
+    try:
+        if "page" in request.json and "content" in request.json and len(request.json["content"]) > 0:
+            _page = Page.query.filter(Page.name == request.json["page"]).one()
 
-        comment = Comment(page=request.json["page"], content = request.json["content"], date=datetime.strftime(datetime.now(), "%d-%m-%Y"), time=datetime.strftime(datetime.now(), "%H:%M:%S"), likes=0, reports=0)
-        socketio.emit("comments_changed", {"page": request.json["page"]})
-        db.session.add(comment)
-        db.session.commit()
-        return "success", 200
-    # except:
-    #     pass
+            comment = Comment(page=request.json["page"], content = request.json["content"], date=datetime.strftime(datetime.now(), "%d-%m-%Y"), time=datetime.strftime(datetime.now(), "%H:%M:%S"), likes=0, reports=0)
+            socketio.emit("comments_changed", {"page": request.json["page"]})
+            db.session.add(comment)
+            db.session.commit()
+            return "success", 200
+    except:
+        pass
 
     return "Failed to publish comment.", 400
 

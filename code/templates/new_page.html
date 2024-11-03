@@ -45,7 +45,7 @@
             let text_response = await response.text();
 
             if (response.status == 200) {
-                window.location.assign(`/pages/${text_response}`)
+                window.location.assign(`/pages/${text_response}?return_to_index=true`)
             } else {
                 handleError(text_response);
                 return;
