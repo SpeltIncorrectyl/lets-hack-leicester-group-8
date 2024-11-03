@@ -13,8 +13,8 @@
     <p>{{description}}</p>
     {% if return_to_index %}
         <a href="/all_pages">Back to main page</a>
+        <div id="qrcode"></div>
     {% endif %}
-    <div id="qrcode"></div>
     <br>
     <b>Comments:</b>
     {% if post_comment %}
@@ -41,7 +41,7 @@
                 {% if comment.reports < 5 %}
                     <span>{{comment.content}}</span>
                     <br>
-                    <span onclick="interactComment('{{comment.id}}', 'like')">Likes: {{comment.likes}}</span> <span onclick="interactComment('{{comment.id}}', 'report')">Reports: {{comment.reports}}</span>
+                    <span id="like_comment_{{comment.id}}" comment_id="{{comment.id}}" onclick="interactComment('{{comment.id}}', 'like', 'up')">Likes: {{comment.likes}}</span> <span id = "report_comment_{{comment.id}}" comment_id="{{comment.id}}" onclick="interactComment('{{comment.id}}', 'report', 'up')">Reports: {{comment.reports}}</span>
                 {% else %}
                     <i>This comment has been temporarily removed pending manual review.</i>
                 {% endif %}
@@ -52,9 +52,11 @@
     {% endif %}
 
     <script>
-        let url = "{{site}}/pages/{{page_name}}";
-        $('#qrcode').empty();
-        $('#qrcode').qrcode(url);
+        if ($("#qrcode") != null) {
+            let url = "{{site}}/pages/{{page_name}}";
+            $('#qrcode').empty();
+            $('#qrcode').qrcode(url);
+        }
 
         document.querySelectorAll("a").forEach(element => {
             if (element.hasAttribute("extra-param") && element.hasAttribute("extra-param-value")) {
@@ -69,10 +71,31 @@
         let socket = io()
 
         let auto_reload = true;
+        let force_redirect = null;
 
         socket.on("comments_changed", (data) => {
             if (data.page == page && auto_reload) {
-                location.reload()
+                if (force_redirect == null) {
+                    location.reload();
+                } else {
+                    window.location.assign(force_redirect);
+                }
+            }
+        });
+
+        let url_set = new URLSearchParams(window.location.href)
+        url_set.getAll("liked_comment").forEach(liked_comment => {
+            let comment = document.getElementById(`like_comment_${liked_comment}`);
+            if (comment != null) {
+                comment.setAttribute("onclick", `interactComment(${comment.getAttribute("comment_id")}, 'like', 'down')`);
+                comment.style.fontWeight = "bold";
+            }
+        });
+        url_set.getAll("reported_comment").forEach(liked_comment => {
+            let comment = document.getElementById(`report_comment_${liked_comment}`);
+            if (comment != null) {
+                comment.setAttribute("onclick", `interactComment(${comment.getAttribute("comment_id")}, 'report', 'down')`);
+                comment.style.fontWeight = "bold";
             }
         });
 
@@ -108,7 +131,6 @@
             if (response.status == 200) {
                 let url = new URL(window.location.href);
                 url.searchParams.set("post_comment", "false");
-                console.log(url.toString());
                 window.location.replace(url);
             } else {
                 handleError(text_response);
@@ -118,12 +140,32 @@
             clearError();
         }
 
-        async function interactComment(id, interaction) {
+        async function interactComment(id, interaction, delta) {
+            let url = window.location.href;
+            let appended_param_key = "";
+            if (interaction == "like") {
+                appended_param_key = "liked_comment";
+            } else {
+                appended_param_key = "reported_comment";
+            }
+            if (delta == "up") {
+                if (url.includes("?")) {
+                    url = url + `&${appended_param_key}=${id}`;
+                } else {
+                    url = url + `?${appended_param_key}=${id}`;
+                }
+            } else {
+                url = url.replace(`${appended_param_key}=${id}`, "");
+            }
+
+            force_redirect = url;
+
             let response = await fetch("/api/interact_comment", {
                 method: "POST",
                 body: JSON.stringify({
                     id: id,
-                    interaction: interaction
+                    interaction: interaction,
+                    delta: delta
                 }),
                 headers: {
                     "Content-type": "application/json; charset=UTF-8"
