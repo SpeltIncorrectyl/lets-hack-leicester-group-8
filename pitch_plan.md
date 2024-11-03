@@ -9,9 +9,11 @@ Difficulty gathering neccessary feedback to improve city. **Examples**:
 
 ## Our Solution
 
-A website (works on mobile) where people can create pages for places like bustops or shops or roads, and then create a qr-code that links to that page. People can scan the qr-code to access the page and can leave comments. Comments can be liked and reported. Likes are collated and are a rough measure of how important feedback is to people. Comments can be reported; sufficient reports will automatically remove the comment.
+A web app (works on mobile) where people can create pages for public places like bustops or private places such as shops , and our solution generates a qr-code that links to that page. People can scan the qr-code to access the page and can leave comments. Comments can be liked and reported. Likes are collated and are a rough measure of how important feedback is to people.
 
-If a comment is liked enough it will send an email to a pre-configured email address.
+Our sytem is like a social media app but it would work close with the local authority and will be maintained by them.
+
+If a comment is liked enough it will send an email to a pre-configured email address (to the local authority).
 
 ## Other Solutions and How we Compare
 
