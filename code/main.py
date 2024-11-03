@@ -65,13 +65,22 @@ def site_all_page_viewing():
 
 @app.route("/api/interact_comment", methods=["POST"])
 def interact_comment():
-    #id, interaction
-    if "id" in request.json and "interaction" in request.json:
+    #id, interaction, delta
+    if "id" in request.json and "interaction" in request.json and "delta" in request.json:
         comment = Comment.query.filter(Comment.id == int(request.json["id"])).one()
+        delta = 0
+        if request.json["delta"] == "up":
+            delta = 1
+        elif request.json["delta"] == "down":
+            delta = -1
         if request.json["interaction"] == "like":
-            comment.likes += 1
+            comment.likes += delta
+            if comment.likes < 0:
+                comment.likes = 0
         elif request.json["interaction"] == "report":
-            comment.reports += 1
+            comment.reports += delta
+            if comment.reports < 0:
+                comment.reports = 0
         db.session.commit()
         socketio.emit("comments_changed", {"page": comment.page})
 
