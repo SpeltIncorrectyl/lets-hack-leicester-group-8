@@ -100,11 +100,14 @@ footer a {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 12px;
+    box-shadow: 1px 2px 3px rgba(50,1,1, 0.1);
+    
+
 }
 .voter {
     list-style-type: none;
     padding: 0px;
-    width: 32px;
+    width: max-content;
 }
 .voter button {
     padding: 2px;
@@ -119,6 +122,43 @@ footer a {
     font-weight: bold;
 }
 
+.prompt {
+    background-color: var(--light-grey);
+    padding: 20px;
+    margin: 0 20% ;
+    border-radius: 15px;
+}
+
 .formsheet {
-    margin: 20px 10px;
+    margin: 20px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
+}
+.formsheet input, textarea {
+    margin: 5px;
+}
+
+.formsection {
+    padding: 5px;
+}
+
+
+.info img {
+    width:  75vw;
+}
+.info p {
+    padding: 5px 0px;
+    margin-left: 10px;
+}
+
+
+
+#submit {
+    background-color: var(--tomato-red);
+    padding: 12px;
+    border: transparent;
+    border-radius: 12px;
+    color: white;
+    box-shadow: 1px 2px 3px rgba(50,1,1, 0.1)
 }

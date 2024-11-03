@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Feedback form</title>
+        <title>Local Voice Leicester Feedback Form</title>
         <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
     <body>
@@ -14,14 +14,29 @@
         <div id="shape-container"> <div id="small-triangle"></div> </div>
 
         <main>
+
+            <article class="prompt"> Submit your Feedback </article>
+
             <form class="formsheet">
-                <label for="pklocation"> Pick a location:</label><br>
-                <input type="text" id="pklocation" name="pklocation" placeholder="Current Location"><br>
-                <label></label>
-                
-                <label for="downloadimage"> Download an image:</label><br>
-                <input type="image" id="uploadimage" name="uploadimage">
-            </form>    
+
+                <div class="formsection">
+                    <label> Pick a location: </label> <br>
+                    <input type="text" id="pklocation" name="pklocation" placeholder="Current Location"> <br>
+                </div>
+
+                <div class="formsection">
+                    <label> Upload an image:</label> <br>
+                    <input type="button" id="uploadimage" name="uploadimage" value="Attach Image"> <br>
+                </div>
+
+                <div class="formsection">
+                    <label> Include a Description: </label> <br>
+                    <textarea value="Provide a description"> </textarea> <br>
+                </div>
+                    
+                <input type="Submit" id="submit">
+
+            </form> 
         </main>
 
         <footer>
