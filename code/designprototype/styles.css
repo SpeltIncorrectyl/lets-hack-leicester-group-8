@@ -100,12 +100,14 @@ footer a {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 12px;
-    box-shadow: 1px 2px 3px rgba(50,1,1, 0.1)
+    box-shadow: 1px 2px 3px rgba(50,1,1, 0.1);
+    
+
 }
 .voter {
     list-style-type: none;
     padding: 0px;
-    width: 32px;
+    width: max-content;
 }
 .voter button {
     padding: 2px;
@@ -145,6 +147,11 @@ footer a {
 .info img {
     width:  150px;
     height: 150px;
+}
+.info p {
+    padding: 5px 0px;
+    margin-left: 10px;
+    
 }
 
 
