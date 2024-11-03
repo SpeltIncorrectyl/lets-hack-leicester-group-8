@@ -5,6 +5,7 @@
     --tomato-red: #F55A51;
     --darker-red: #D64C44;
     --light-grey: #f4f4f4;
+    --blue: #5C6EAD;
 }
 
 * {
@@ -82,6 +83,7 @@ footer p {
 }
 footer a {
     text-decoration: none;
+    color: var(--blue);
 }
 
 .menu-btn-section {
