@@ -4,10 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Voice: {{display_name}}</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
 </head>
 <body>
     <h1>Local Voice: {{display_name}}</h1>
     <p>{{description}}</p>
-    <a href="/">Back to main page</a>
+    {% if return_to_index %}
+        <a href="/all_pages">Back to main page</a>
+    {% endif %}
+    <div id="qrcode"></div>
+    <br>
+    <b>Comments:</b>
+    {% if post_comment %}
+        <br>
+        <a extra-param="post_comment", extra-param-value="false">Cancel</a>
+        <br>
+        <input id="comment_posting_content_field" />
+        <button onclick="postComment()">Send</button>
+        <br>
+        <p id="error-message"></p>
+    {% else %}
+        <a extra-param="post_comment", extra-param-value="true">Post Comment</a>
+    {% endif %}
+
+    <br>
+    <br>
+    {% if comment_length == 0 %}
+        <p>No comments...</p>
+    {% else %}
+        {% for comment in comments %}
+            <b>Posted on {{comment.date}} at {{comment.time}}</b>
+            <br>
+            <span>{{comment.content}}</span>
+            <br>
+            <br>
+        {% endfor %}
+    {% endif %}
+
+    <script>
+        let url = "{{site}}/pages/{{page_name}}";
+        $('#qrcode').empty();
+        $('#qrcode').qrcode(url);
+
+        document.querySelectorAll("a").forEach(element => {
+            if (element.hasAttribute("extra-param") && element.hasAttribute("extra-param-value")) {
+                let url = new URL(window.location.href);
+                url.searchParams.set(element.getAttribute("extra-param"), element.getAttribute("extra-param-value"));
+                element.setAttribute("href", url.toString());
+            }
+        });
+
+        let page = "{{database_name}}";
+
+        let socket = io()
+
+        let auto_reload = true;
+
+        socket.on("comments_changed", (data) => {
+            if (data.page == page && auto_reload) {
+                location.reload()
+            }
+        });
+
+        function handleError(error) {
+            document.getElementById("error-message").innerHTML = error;
+        }
+
+        function clearError() {
+            document.getElementById("error-message").innerHTML = "";
+        }
+
+        async function postComment() {
+            if (document.getElementById("comment_posting_content_field").value == "") {
+                handleError("Comment cannot be empty.");
+                return;
+            }
+
+            auto_reload = false;
+
+            let response = await fetch("/api/post_comment", {
+                method: "POST",
+                body: JSON.stringify({
+                    content: document.getElementById("comment_posting_content_field").value,
+                    page: page
+                }),
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            });
+
+            let text_response = await response.text();
+
+            if (response.status == 200) {
+                let url = new URL(window.location.href);
+                url.searchParams.set("post_comment", "false");
+                console.log(url.toString());
+                window.location.replace(url);
+            } else {
+                handleError(text_response);
+                return;
+            }
+
+            clearError();
+        }
+    </script>
 </body>
 </html>

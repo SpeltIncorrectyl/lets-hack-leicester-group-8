@@ -31,7 +31,7 @@
 
             clearError();
 
-            await fetch("/api/new_page", {
+            let response = await fetch("/api/new_page", {
                 method: "POST",
                 body: JSON.stringify({
                     name: document.getElementById("page_creation_name_field").value,
@@ -41,6 +41,15 @@
                     "Content-type": "application/json; charset=UTF-8"
                 }
             });
+
+            let text_response = await response.text();
+
+            if (response.status == 200) {
+                window.location.assign(`/pages/${text_response}`)
+            } else {
+                handleError(text_response);
+                return;
+            }
         }
     </script>
 </body>

@@ -7,8 +7,14 @@
 </head>
 <body>
     <h1>Local Voice</h1>
+
     <a href="/page_creation">Create New Page</a>
     <br>
-    <a href="/all_pages">See All Pages</a>
+    <br>
+    <a href="/">Hide Extra Pages</a>
+    {% for page in page_names %}
+        <br>
+        <a href="/pages/{{page[1]}}?return_to_index=true">{{page[0]}}</a>
+    {% endfor %}
 </body>
 </html>
