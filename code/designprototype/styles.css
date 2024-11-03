@@ -143,8 +143,10 @@ footer a {
 
 
 .info img {
-    width: 75vw;
+    width:  150px;
+    height: 150px;
 }
+
 
 
 #submit {
