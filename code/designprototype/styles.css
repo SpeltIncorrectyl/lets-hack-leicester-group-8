@@ -121,4 +121,19 @@ footer a {
 
 .formsheet {
     margin: 20px 10px;
+    text-align: center;
+    background-color: var(--light-grey);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: min-content;
+    padding: 10px;
+    border-radius: 15px;
+}
+.formsheet input, textarea {
+    margin: 5px;
+}
+
+.formsection {
+    padding: 5px;
 }
