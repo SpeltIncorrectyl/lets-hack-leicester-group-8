@@ -1,0 +1,21 @@
+Our propose solution is a  web app, optimized for mobile, that allows users to create dedicated pages for both public places(like bus stops) and private businesses (like shops).​
+
+​
+
+QR Code Integration​
+
+Each created page generates a unique QR code, enabling easy access. Users can scan the QR code to view the page and interact with the content.​
+
+​
+
+Users can leave comments on each page. Comments can be liked or reported, with the number of likes serving as an indicator of the feedback's importance.​
+
+​
+
+Our app operates similarly to a social media platform but maintains a strong collaboration with local authorities, ensuring that it is effectively managed and updated.​
+
+​
+
+If a comment receives enough likes, it automatically sends an email notification to a designated local authority email address, ensuring that important feedback is communicated promptly.​
+
+​
