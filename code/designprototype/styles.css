@@ -130,7 +130,6 @@ footer a {
 .formsheet {
     margin: 20px;
     text-align: center;
-    /* background-color: var(--light-grey); */
     padding: 10px;
     border-radius: 15px;
 }
@@ -141,6 +140,11 @@ footer a {
 .formsection {
     padding: 5px;
 }
+
+.info img {
+    color: red;
+}
+
 
 #submit {
     background-color: var(--tomato-red);
