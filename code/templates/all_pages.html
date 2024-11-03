@@ -1,20 +1,56 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Voice</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
 </head>
 <body>
-    <h1>Local Voice</h1>
-
-    <a href="/page_creation">Create New Page</a>
+    <!-- <a href="/page_creation">Create New Page</a>
     <br>
     <br>
     <a href="/">Hide Extra Pages</a>
     {% for page in page_names %}
         <br>
         <a href="/pages/{{page[1]}}?return_to_index=true">{{page[0]}}</a>
-    {% endfor %}
+    {% endfor %} -->
+
+
+    <header>
+        <h1> Local Voice Leicester </h1>
+        <h2> Raise Concerns Raise Standards </h2>
+    </header>
+    <!-- <div id="shape-container"> <div id="small-triangle"></div> </div> -->
+    
+    <main>
+        <article class="blurb">
+            <p> Welcome to Local Voice Leicester. 
+                We intent to raise your concerns to raise the standards throughout the City of Leicester. 
+                Select what you would like to do:
+            </p>
+        </article>
+
+        <section class="menu-btn-section">
+            <a href="/page_creation"> 
+                <button class="menu-btn"> Create a page </button>
+            </a>
+        </section>
+
+        <section class="menu-btn-section">
+            <a href="/"> 
+                <button class="menu-btn"> Hide pages </button>
+            </a>
+        </section>
+
+        {% for page in page_names %}
+        <section class="menu-btn-section">
+            <a href="/pages/{{page[1]}}?return_to_index=true"> 
+                <button class="small-menu-btn"> {{page[0]}} </button>
+            </a>
+        </section>
+        {% endfor %}
+    </main>
+</body>
+</html>
 </body>
 </html>
