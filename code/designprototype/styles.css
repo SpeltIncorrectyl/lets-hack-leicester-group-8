@@ -38,6 +38,7 @@ body {
     flex-direction: column;
     height: 100vh;
     grid-template-rows: auto 1fr auto;
+    color: var(--navy-blue);
 }
 
 h1, h2 {
@@ -52,7 +53,7 @@ article {
 }
 
 section {
-    margin: 10px 10px 30px;
+    margin: 10px 10px 25px;
 }
 
 .menu-btn {
@@ -79,6 +80,9 @@ footer {
 footer p {
     padding-bottom: 5px;
 }
+footer a {
+    text-decoration: none;
+}
 
 .menu-btn-section {
     text-align: center;
@@ -86,7 +90,7 @@ footer p {
 
 #voices {
     list-style-type: none;
-    padding: 10px;
+    padding: 10px 20px;
 }
 #voices li {
     background-color: var(--light-grey);
